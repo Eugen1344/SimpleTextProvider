@@ -11,10 +11,13 @@ namespace SimpleTextProvider
         [SerializeField] private bool _fillOnStart;
         [SerializeField] private TextProviderDatabase _database;
 
+        public abstract void Setup();
         protected abstract void SetLabelText(string text);
 
         private void Start()
         {
+            Setup();
+
             if (_fillOnStart)
                 FillText();
         }
