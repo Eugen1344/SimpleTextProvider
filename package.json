@@ -1,4 +1,7 @@
 {
-    "dependencies": {
-    }
+  "name": "SimpleTextProvider",
+  "version": "1.0.0",
+  "displayName": "Simple Text Provider",
+  "author": "Eugen1344",
+  "description": "Simple text provider for Unity. Allows you to store texts inside of databases"
 }
