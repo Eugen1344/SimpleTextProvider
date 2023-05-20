@@ -4,8 +4,9 @@ namespace SimpleTextProvider
 {
     public abstract class AbstractTextProvider : MonoBehaviour
     {
-        [SerializeField] private string _key;
-        [SerializeField] private bool _fillOnStart;
+        public string Key;
+        public bool FillOnStart;
+
         [SerializeField] private TextProviderDatabase _database;
 
         public abstract void Setup();
@@ -15,7 +16,7 @@ namespace SimpleTextProvider
         {
             Setup();
 
-            if (_fillOnStart)
+            if (FillOnStart)
                 FillText();
         }
 
@@ -36,7 +37,7 @@ namespace SimpleTextProvider
 
         private string GetText()
         {
-            string providedText = _database.GetText(_key);
+            string providedText = _database.GetText(Key);
             return providedText;
         }
     }
