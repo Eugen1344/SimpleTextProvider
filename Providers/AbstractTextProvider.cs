@@ -4,9 +4,6 @@ namespace SimpleTextProvider
 {
     public abstract class AbstractTextProvider : MonoBehaviour
     {
-        private const string MissingTextMessage = "[missing text]";
-        private const string MissingKeyMessage = "[missing key]";
-
         [SerializeField] private string _key;
         [SerializeField] private bool _fillOnStart;
         [SerializeField] private TextProviderDatabase _database;
@@ -39,12 +36,8 @@ namespace SimpleTextProvider
 
         private string GetText()
         {
-            if (string.IsNullOrWhiteSpace(_key))
-                return MissingKeyMessage;
-
             string providedText = _database.GetText(_key);
-
-            return providedText ?? MissingTextMessage;
+            return providedText;
         }
     }
 }
