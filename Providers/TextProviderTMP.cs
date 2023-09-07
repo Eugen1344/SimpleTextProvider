@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace SimpleTextProvider
@@ -14,7 +13,7 @@ namespace SimpleTextProvider
             Setup();
         }
 
-        public override void Setup()
+        protected override void Setup()
         {
             if (_label == null)
                 _label = GetComponent<TextMeshProUGUI>();
@@ -23,7 +22,7 @@ namespace SimpleTextProvider
         protected override void SetLabelText(string text)
         {
             if (_label == null)
-                throw new NullReferenceException("Call Setup() or wait for Awake before filling text");
+                Setup();
 
             _label.text = text;
         }

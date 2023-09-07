@@ -9,7 +9,7 @@ namespace SimpleTextProvider
 
         [SerializeField] private TextProviderDatabase _database;
 
-        public abstract void Setup();
+        protected abstract void Setup();
         protected abstract void SetLabelText(string text);
 
         private void Start()
